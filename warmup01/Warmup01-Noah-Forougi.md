@@ -13,7 +13,7 @@ Kazuda Xiono
 
 > "In my mind, that's what I was—Kazuda Xiono, the best starfighter pilot in the galaxy."
 
-[![Kazuda Xiono](Kazuda.jpg)](https://starwars.fandom.com/wiki/Kazuda_Xiono) <br/> <br/> <br/>
+\[![Kazuda Xiono](/Users/user/Downloads/Kazuda.jpg) <br/> <br/> <br/>
 
 | Description | Value |
 |:-----------:|:-----:|
@@ -66,7 +66,7 @@ Multigrain Apple Crisps
 10. Bake apple crisps for about 30 to 40 minutes
 11. If tops brown too quickly, put a sheet of foil over the whole tray for remaining baking time
 
-![](Applecrisp.jpg)
+![](/Users/user/Downloads/Applecrisp.jpg)
 
 ### *Other Information on Apple Crisps*
 
