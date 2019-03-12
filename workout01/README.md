@@ -1,15 +1,23 @@
 Workout 01 
+
 Noah Forougi
+
 Statistics 133
 
 
 Description of Project:
-	This project will take a look at data on the Golden State Warriors. I will investigate how the 5 starters in the 2016 season performed with special focus on their shooting. The structure of this project will be divided into six sections. First, I will provide background and some context on the Golden State Warriors. I will then present the data used and how it was manipulated through R-scripts. I will then go through the different analyses I utilized to investigate the shooting performance. The next section will be a discussion and thorough examination of the previous analyses. I will then conclude the paper and offer suggestions for future research. References will be listed at the end of the report as well as at the bottom of the document.
+
+
+This project will take a look at data on the Golden State Warriors. I will investigate how the 5 starters in the 2016 season performed with special focus on their shooting. The structure of this project will be divided into six sections. First, I will provide background and some context on the Golden State Warriors. I will then present the data used and how it was manipulated through R-scripts. I will then go through the different analyses I utilized to investigate the shooting performance. The next section will be a discussion and thorough examination of the previous analyses. I will then conclude the paper and offer suggestions for future research. References will be listed at the end of the report as well as at the bottom of the document.
 	
 Author: 
 
 Noah Forougi
+
+
 Class of 2020 
+
+
 BA - Economics
 	
 
