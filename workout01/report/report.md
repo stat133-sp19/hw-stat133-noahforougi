@@ -43,7 +43,7 @@ This chart was created using ggplot2. The facet\_wrap() arugment within ggplot2(
 
 Another way to investigate the truly historic shooting season of the Warriors is to take a look at the effective shooting percentage of their players. We will take a deeper look at this by investigating the effective shooting percentages of each player based on shot type, as well as in total. The term effective shooting percentage is a commonly used basketball statistics. This stat allows analysts and team managers to look at the effectiveness of a players shooting. While this can be theoretically used on an overall level to look at the effective shooting percentages of all players in the NBA, this paper will look at a smaller sample of the starting 5 players on the 2016 Warriors. Because of the historic season and the record-breaking amount of wins, these futher analyses will display numeric tables that will put a number on their incredible shooting.
 
-**2 Point Effective Shooting Percentage by Player** 
+##### 2 Point Effective Shooting Percentage by Player
 
 We will first look at the 2PT Effective Shooting Percentage by Player. This is also commonly referred to as the effective field goal shooting percentage. In this table, as with all the following tables, we display the name of the player, their total attempted number of shots, the total made shots, and the perctange of those shots made. We will save the analysis for the next section, but given a quick look, we can see who the player leading in field goal effectiveness is - Andre Igoudala.
 
@@ -142,7 +142,7 @@ Draymond Green
 </tbody>
 </table>
 
-**3 Point Effective Shooting by Player** 
+##### 3 Point Effective Shooting by Player
 
 Similarily as above, this chart looks at the 3PT Effective Shooting Percentage of the starting 5 Warriors, in 2016. Once again, we will save a deeper analysis for the next section, but a quick overview and comparison of this shot demonstrates that 3PT effectiveness is much less than Field Goal effectiveness.
 
@@ -241,7 +241,7 @@ Draymond Green
 </tbody>
 </table>
 
-**Effective Shooting Percentage by Player** 
+##### Effective Shooting Percentage by Player
 
 Finally, we create a table that includes all shots and overall percentages, which is called Effective Shooting Percentage by Player. This table is essentially a sum of the two tables produced earlier. Arranged by descending order, this table shows a more complete picture of the shooting effectiveness but does not demonstrate shooting patterns as well.
 
