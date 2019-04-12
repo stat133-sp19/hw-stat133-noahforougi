@@ -1,5 +1,6 @@
 
 
+
 library(shiny)
 library(ggplot2)
 library(rsconnect)
@@ -55,14 +56,29 @@ ui <- fluidPage(
            selectInput(inputId =  "facet", label = "Facet?", 
                        choices = list("No" = 1, "Yes" = 2), 
                        selected = 1))
-    
   ),
   # Show a plot of the generated distribution
-  mainPanel(
-    plotOutput("plot", width = "150%"),
-    tableOutput("values")
+  
+  fluidRow(
+    
+    
+    # Show a plot of the generated distribution
+    column(width = 10,offset = 1,
+           h4("Timelines"),
+           plotOutput("plot")
+           
+    )
+  ),
+  fluidRow(
+    column(width = 12,offset=1,
+           h4("Balances"),
+           tableOutput("values")
+    )
   )
 )
+
+
+  
 
 
 # Define server logic required to draw a histogram
@@ -160,7 +176,7 @@ server <- function(input, output) {
     } else {
       return(rbind(row(),dat()))
     }
-    
+   
   })
   
   output$plot <- renderPlot({ 
@@ -172,7 +188,7 @@ server <- function(input, output) {
       ggplot(dat, aes(x=year, y=value, col=variable)) + geom_line() + facet_wrap(~variable) + 
         geom_area(data = dat, aes(fill=variable), alpha = 0.6) + geom_point() + ggtitle("Three Modes of Investing")
     }
-    
+    #gobears
   })
 }
 # Run the application 
