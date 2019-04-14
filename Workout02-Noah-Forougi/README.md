@@ -12,4 +12,4 @@ This project contains another subdirectory called rsconnect that allowed me to p
 
 
 #### Application Published
-The published and publicly available application can be found [here](https://noah-forougi.shinyapps.io/Workout02/).
+The published and publicly available application can be found [here](https://noah-forougi.shinyapps.io/Workout02-Noah-Forougi/).
