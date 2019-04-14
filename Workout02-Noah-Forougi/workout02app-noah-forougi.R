@@ -169,11 +169,7 @@ server <- function(input, output) {
   
   # Show the values in an HTML table ----
   output$values <- renderTable({
-    if (input$years == 0) {
-      return(row0())
-    } else {
-      return(rbind(row(),dat()))
-    }
+    dat()
    
   })
   
