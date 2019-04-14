@@ -1,6 +1,5 @@
 
 
-
 library(shiny)
 library(ggplot2)
 library(rsconnect)
@@ -125,7 +124,6 @@ server <- function(input, output) {
   row <- reactive(row <- c(0, rep(input$initial_amount, 3)))
   row0 <- reactive({
     years <- 0
-    
     no_contrib <- input$initial_amount
     fixed_contrib <-  input$initial_amount
     growing_contrib <-   input$initial_amount
@@ -139,7 +137,7 @@ server <- function(input, output) {
     return(row0)
   })
   dat <- reactive({
-    years <- 1:input$years
+    years <- 0:input$years
     
     no_contrib <- rep(0, input$years)
     fixed_contrib <- rep(0, input$years)
@@ -147,12 +145,12 @@ server <- function(input, output) {
     
     
     
-    for (y in 1:input$years) {
-      no_contrib[y] <- future_value(amount = input$initial_amount, rate = input$return_rate/100, years = y)
+    for (y in years) {
+      no_contrib[y+1] <- future_value(amount = input$initial_amount, rate = input$return_rate/100, years = y)
       
-      fixed_contrib[y] <-   future_value(amount = input$initial_amount, rate = input$return_rate/100, years = y) + annuity(input$annual_contribution, rate = input$return_rate/100, years = y)
+      fixed_contrib[y+1] <-   future_value(amount = input$initial_amount, rate = input$return_rate/100, years = y) + annuity(input$annual_contribution, rate = input$return_rate/100, years = y)
       
-      growing_contrib[y] <- future_value(amount = input$initial_amount, rate = input$return_rate/100, years = y) + growing_annuity(contrib = input$annual_contribution, rate = input$return_rate/100, years = y, growth = input$growth_rate/100)
+      growing_contrib[y+1] <- future_value(amount = input$initial_amount, rate = input$return_rate/100, years = y) + growing_annuity(contrib = input$annual_contribution, rate = input$return_rate/100, years = y, growth = input$growth_rate/100)
     }
     
     dat <- data.frame(
@@ -181,6 +179,7 @@ server <- function(input, output) {
   
   output$plot <- renderPlot({ 
     dat <- reshape2::melt(dat(), id.var = 'year')
+  
     if (input$facet == "1") {
       ggplot(dat, aes(x=year, y=value, col=variable))+ geom_line() + geom_point() + ggtitle("Three Modes of Investing")
     }
@@ -188,8 +187,8 @@ server <- function(input, output) {
       ggplot(dat, aes(x=year, y=value, col=variable)) + geom_line() + facet_wrap(~variable) + 
         geom_area(data = dat, aes(fill=variable), alpha = 0.6) + geom_point() + ggtitle("Three Modes of Investing")
     }
-    #gobears
   })
 }
 # Run the application 
 shinyApp(ui = ui, server = server)
+
