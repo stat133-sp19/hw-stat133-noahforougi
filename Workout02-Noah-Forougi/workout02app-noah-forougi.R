@@ -71,7 +71,7 @@ ui <- fluidPage(
   fluidRow(
     column(width = 12,offset=1,
            h4("Balances"),
-           tableOutput("values")
+           verbatimTextOutput("values")
     )
   )
 )
@@ -168,8 +168,8 @@ server <- function(input, output) {
   
   
   # Show the values in an HTML table ----
-  output$values <- renderTable({
-    dat()
+  output$values <- renderPrint({
+    return(dat())
    
   })
   
