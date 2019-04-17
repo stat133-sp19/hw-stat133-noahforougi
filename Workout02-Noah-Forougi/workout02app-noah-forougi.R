@@ -33,7 +33,7 @@ ui <- fluidPage(
                        "Years",
                        min = 0,
                        max = 50,
-                       value = 10, 
+                       value = 20, 
                        step = 1)),
     column(4, 
            sliderInput(inputId =  "annual_contribution",
