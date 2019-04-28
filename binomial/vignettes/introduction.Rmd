@@ -1,0 +1,80 @@
+---
+title: "Introduction to Binomial"
+author: "Noah Forougi"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to Binomial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r, include=FALSE}
+source("../R/main_functions_and_methods.R")
+source("../R/private_auxillary_functions.R")
+source("../R/private_checker_functions.R")
+
+```
+
+## Binomial Package
+The Binomial package was created with various functions that make working with binomial distributions much easier. There are a variety of functions that allow the user to understand the total number of possible combinations a binomial distribution can create, as well as understand binomial distributions. It allows for calculations related to binomial distributions to be done with ease. 
+
+## Main Functions
+The main functions in Binomial include bin_choose(), bin_probability, bin_distribution(),  bin_cumulative(), and bin_variable().
+
+### bin_choose()
+This function allows the user to get a numeric value for the total amount of combinations from which k successes can occur in n trials. It takes two arguments and returns a value for the total possible amount of combinations.
+```{r}
+bin_choose(10,5)
+```
+
+### bin_probability()
+This is a function that allows the user to obtain the probability of getting a certain amount of successes in a certain amount of trials. It takes three arguments and returns the probability of that occurring.
+```{r}
+bin_probability(5,10,.5)
+```
+
+### bin_distribution()
+This function creates a data frame that shows the probability of obtaining a certain amount of successes in a certain amount of trials. It also contains some methods that allow for interesting visualizations that will be demonstrated below.
+```{r}
+bin_distribution(5, 0.5)
+```
+As you can see, this function gives us a dataframe of probability distributions. We can quickly visualize this data through a method function called plot.bindis(). It requires the use of ggplot2, which we will load here.
+```{r}
+library(ggplot2)
+example <- bin_distribution(trials = 5,prob = 0.5)
+plot.bindis(example)
+```
+
+### bin_cumulative()
+This function creates a dataframe that gives the cumulative probability of the success values. It returns a data frame with three columns, similar to that of bin_distribution. However, the third column gives a cumulative sum of the probabilities. 
+```{r, warning=FALSE}
+bin_cumulative(5,0.5)
+```
+#### bin_cumulative() Methods
+Additionally, we can use the data.frame resulting from bin_cumulative quite easily. We can plot the cumulative probability distribution by using plot.bincum(). 
+```{r, warning=FALSE}
+example2 <- bin_cumulative(5,0.5)
+plot.bincum(example2)
+```
+
+### bin_variable()
+bin_variable() allows us to look at a binary variable object. It comes with a variety of methods that allows us to take in the information quite easily.
+```{r }
+example3 <- bin_variable(5,0.5)
+print.binvar(example3)
+summary.binvar(example3)
+print.summary.binvar(example3)
+```
+
+## Measures
+These functions include bin_mean(), bin_variance(), bin_mode(), bin_skewness(), and bin_kurtosis() that all give quick results for the corresponding values. They each take the same inputs for trials and prob and return the result.
+```{r}
+bin_mean(10,0.5)
+bin_variance(10,0.5)
+bin_mode(10,0.5)
+bin_skewness(10,0.5)
+bin_kurtosis(10,0.5)
+```
+
+
+
