@@ -19,4 +19,4 @@ This project contains all the necessary documentation for a published package. T
 
 
 #### Acknowledgements
-The work that went into creating this package was done with the great help of Professor Gaston Sanchez' online book, [Pack YouR Code],https://www.gastonsanchez.com/packyourcode/>, as well as Hadley Wickham's online resource, [R Packages]<http://r-pkgs.had.co.nz/package.html>
+The work that went into creating this package was done with the great help of Professor Gaston Sanchez' online book, [Pack YouR Code](https://www.gastonsanchez.com/packyourcode/), as well as Hadley Wickham's online resource, [R Packages](http://r-pkgs.had.co.nz/package.html)
